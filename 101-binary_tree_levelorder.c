@@ -13,9 +13,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	if (tree->left == NULL && tree->right == NULL)
-		return (0);
-
 	lft = binary_tree_height(tree->left);
 	rgt = binary_tree_height(tree->right);
 
@@ -44,7 +41,7 @@ void print_level(const binary_tree_t *tree, size_t level, void (*func)(int))
 
 	if (level == 1)
 		func(tree->n);
-	else
+	else if (level > 1)
 	{
 		print_level(tree->left, level - 1, func);
 		print_level(tree->right, level - 1, func);
