@@ -12,7 +12,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
-		
+
 	if (tree->left == NULL && tree->right == NULL)
 		return (0);
 
@@ -33,14 +33,16 @@ size_t binary_tree_height(const binary_tree_t *tree)
  * print_level - Prints the nodes in the tree
  * @tree: tree node
  * @level: level
+ * @func: function pointer
  */
 
-void print_level(const binary_tree_t *tree, size_t level, void (*func)(int)) {
+void print_level(const binary_tree_t *tree, size_t level, void (*func)(int))
+{
 
 	if (tree == NULL)
 		return;
 
-	if (level == 0) 
+	if (level == 0)
 		func(tree->n);
 	else
 	{
