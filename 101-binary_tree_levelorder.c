@@ -42,7 +42,7 @@ void print_level(const binary_tree_t *tree, size_t level, void (*func)(int))
 	if (tree == NULL)
 		return;
 
-	if (level == 0)
+	if (level == 1)
 		func(tree->n);
 	else
 	{
